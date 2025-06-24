@@ -1,0 +1,27 @@
+[note]
+
+# Language used when writing notes.
+# This is used to generate slugs or with date formats.
+language = "es"
+
+# The default title used for new note, if no `--title` flag is provided.
+default-title = "Untitled"
+
+# Template used to generate a note's filename, without extension.
+filename = "dia-{{title}}"
+
+extension = "md"
+
+template = "default.md"
+
+[extra]
+author="Sasha"
+
+[alias]
+dia = "zk new --title $argv"
+
+# Edit the last modified note.
+edlast = "zk edit --limit 1 --sort modified- $argv"
+
+# Edit the notes selected interactively among the notes created the last two weeks.
+recent = "zk edit --sort created- --created-after 'last two weeks' --interactive"
